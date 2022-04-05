@@ -266,7 +266,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>84162dc6</spirit:value>
+            <spirit:value>4ed4da03</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -282,7 +282,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>84162dc6</spirit:value>
+            <spirit:value>4ed4da03</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -679,6 +679,10 @@
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
+        <spirit:name>hdl/multi_supervisor.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>hdl/myip_v1_0_S00_AXI.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
@@ -705,13 +709,17 @@
       <spirit:file>
         <spirit:name>hdl/myip_v1_0.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_4459a069</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_206b045b</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
         <spirit:name>hdl/miner.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/multi_supervisor.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -858,11 +866,11 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>HashCorev1.0</xilinx:displayName>
-      <xilinx:coreRevision>6</xilinx:coreRevision>
+      <xilinx:coreRevision>10</xilinx:coreRevision>
       <xilinx:upgrades>
         <xilinx:canUpgradeFrom>user.org:user:myip:1.0</xilinx:canUpgradeFrom>
       </xilinx:upgrades>
-      <xilinx:coreCreationDateTime>2022-04-05T19:37:19Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2022-04-05T22:57:48Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@383700fe_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@10ea97da_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
@@ -1078,13 +1086,208 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@1965f22e_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@4f943442_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@3b88ef04_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46228698_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f6c2bba_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6823d83_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2fc7a0e3_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68c16673_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d56a279_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1af0642e_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9c52591_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@391e6fe6_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f6f268_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ad92ea4_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3df819cf_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c10a704_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15887f74_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b3d8a04_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f23d9d7_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6934180e_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2de75a91_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f5fd06d_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@772d58e3_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26565aa2_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@762a7556_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6fc7167f_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4bf8dc4f_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@241656c3_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a527e92_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75068fd1_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11b9596d_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b5c132f_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b69285e_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f70b486_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@456a2293_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@433e7d1f_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d5da3cf_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f51266e_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5fd9b948_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e556805_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3114f44e_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e2c158b_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a5a7420_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e28928f_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36b9a843_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e9ed8da_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@753ef3b_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62ce2472_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18301cd3_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3233d0ac_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@172fb932_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4cd14eed_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4345281c_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@438e01c_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e1133b7_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@515c03e9_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74acf076_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62850cc5_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5149b2aa_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40d3ab63_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@592c0797_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1312d1f8_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ff54f86_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b6cabdc_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@245da828_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5cf218c5_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c5204ea_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6217ed33_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e730f14_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1089ff7e_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66913945_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@231721d1_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@290da753_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36d2f53c_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@541172e6_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66b24e14_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d0c77fa_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7390289d_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27dfe095_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a87407b_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27d9749a_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29697d23_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51db45d1_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@204f2c14_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55dd11c3_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@393631ec_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56513e87_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@379d16b0_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3161fcae_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@68dd0a5_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@450cbd43_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5cbc7dbe_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14771fb4_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b450f43_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7aef56fa_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38923bee_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d7ef333_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@304660eb_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46c24210_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a5d5bf8_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d18cfc3_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@767e3306_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d6a9025_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3baef3e8_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@357f42aa_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4842c5d2_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4bb7f0f6_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@493cbbd5_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@61939481_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78c53de9_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e690d45_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d2f7c88_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ee9a276_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46c99cc4_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@94b645c_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e5fcd7b_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7552ae10_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e3b1bdd_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a13f912_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a4eb6fc_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@713af0a8_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a534c81_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6da8fd80_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@596b6c53_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f6110bd_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e85c95f_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5800a737_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@54aca305_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18e3c3d2_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e185fdb_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34b59981_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@77bdf405_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3a782983_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45d82d99_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3cf256d1_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f1726bc_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c4f1a8c_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52f955e3_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b671184_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74e58dbf_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14765bdb_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@749730dd_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31dccf24_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13872c4a_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@442ca72_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52ce229b_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f04fe19_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d19f8dc_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1fec2ed7_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49c94a09_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15cced1d_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28df44c0_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36fbf52c_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4fe750c0_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6244b097_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65d3343e_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f879444_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47c406c1_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e14abb7_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2feeacf0_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@adfe8dd_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@788a2a3b_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f2ab5a0_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c16f0b2_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7fe20a32_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7522d5ee_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7dae3895_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d720c97_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51cd156_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43a9c962_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62d45b1f_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2635422f_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@153b4996_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12815565_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@721c573e_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3323a68d_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17724db1_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4016abf8_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@524be1a9_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d11658c_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73167c53_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@121c8dd1_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7146f0d1_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76b77d83_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@571a0a46_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@669cfb71_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56869eb4_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33da5fcd_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d4ac849_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@453b1ef5_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64659dac_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e6da1cb_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@322e3a67_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a19ae20_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e14f1bb_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ecffab7_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74bda215_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12260534_ARCHIVE_LOCATION">/home/chase/Workspace/School/AdvancedMCU/ip_repo/myip_1.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.3</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="9742ac6f"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="e24352cc"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="63c6c2f4"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="ab251d48"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="4bb1fc3b"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="df55be54"/>

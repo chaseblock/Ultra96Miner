@@ -62,10 +62,9 @@
 	wire [31:0] config_regs [511:0];
 	
     
-    reg process_complete;
-    wire [255:0] miner_hash_out;
-    reg [255:0] final_hash;
-    reg [31:0]  nonce_out;
+    wire process_complete;;
+    wire [255:0] final_hash;
+    wire [31:0]  nonce_out;
 	
 // Instantiation of Axi Bus Interface S00_AXI
 	myip_v1_0_S00_AXI # ( 
@@ -99,76 +98,22 @@
 		.S_AXI_RREADY(s00_axi_rready)
 	);
 
-	// Add user logic here
-	
-	reg [31:0] nonce = 0;
-	reg start_miner = 0;
-	wire miner_done;
-
-    reg reset_miner;
-    wire miner_r = config_regs[0][0] || reset_miner;
-
-    miner miner0(
+	multi_supervisor #(1) supervisor (
         .clk(s00_axi_aclk),
-        .reset(miner_r),
-        .start(start_miner),
-        .done(miner_done),
+        .reset(config_regs[0][0]),
+        .start(config_regs[0][1]),
+        
         .version(config_regs[7]),
         .hashPrevBlock(256'(config_regs[15:8])),
         .hashMerkleRoot(256'(config_regs[31:16])),
         .timestamp(config_regs[32]),
         .bits(config_regs[33]),
-        .nonce(nonce),
-        .hash_out(miner_hash_out)
+        .target_bits(config_regs[4]),
+        
+        .process_complete(process_complete),
+        .hash_out(final_hash),
+        .nonce_out(nonce_out),
+        .success() // TODO
     );
-
-    // Supervisor stuff for the miner
-    
-    // Count the zeros in the output
-    wire [31:0] zeros;
-    zero_counter zc(miner_hash_out, zeros);
-    
-    reg running = 0;
-    always @(posedge s00_axi_aclk) begin
-        if(config_regs[0][0] == 1'b1) begin// reset logic
-            nonce <= 0;
-            process_complete <= 0;
-            running <= 0;
-            reset_miner <= 0;
-        end
-        else if(config_regs[0][1] && !running) begin // start logic
-            running <= 1;
-            process_complete <= 0;
-            nonce <= 0;
-            start_miner <= 1;
-            reset_miner <= 0;
-        end
-        else if(config_regs[0][1] && running) begin
-            if(process_complete) begin
-                process_complete <= 1;
-            end
-            else if(miner_done) begin
-                // Increment the nonce, unless it's at its maximum
-                if(nonce == 32'hFFFFFFFF || zeros > config_regs[4]) begin
-                    process_complete <= 1;
-                    running <= 0;
-                    start_miner <= 0;
-                    final_hash <= miner_hash_out;
-                    nonce_out <= nonce;
-                end
-                else begin
-                    nonce <= nonce + 1;
-                    start_miner <= 1;
-                    reset_miner <= 1;
-                end
-            end
-            else begin
-                reset_miner <= 0;
-            end
-        end
-    end
-    // End supervisor stuff
-
-	// User logic ends
 
 	endmodule
