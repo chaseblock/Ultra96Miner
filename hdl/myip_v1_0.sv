@@ -98,7 +98,7 @@
 		.S_AXI_RREADY(s00_axi_rready)
 	);
 
-	multi_supervisor #(1) supervisor (
+	multi_supervisor #(16) supervisor (
         .clk(s00_axi_aclk),
         .reset(config_regs[0][0]),
         .start(config_regs[0][1]),

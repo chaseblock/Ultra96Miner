@@ -1,24 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 04/05/2022 03:22:47 PM
-// Design Name: 
-// Module Name: multi_supervisor
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
 
 module multi_supervisor #(parameter NUM_MINERS=1) (
     input clk,
@@ -64,7 +44,7 @@ module multi_supervisor #(parameter NUM_MINERS=1) (
                 .hashMerkleRoot(hashMerkleRoot),
                 .timestamp(timestamp),
                 .bits(bits),
-                .nonce({`num_miner_bits'(i), nonce[0 +: (31-`num_miner_bits)]}),
+                .nonce({`num_miner_bits'(i), nonce[0 +: (32-`num_miner_bits)]}),
                 .hash_out(miner_hash_out[i])
             );
         end
@@ -74,6 +54,7 @@ module multi_supervisor #(parameter NUM_MINERS=1) (
     reg running = 0;
     reg [255:0] miners_last_hash [NUM_MINERS-1:0];
     reg [31:0] miners_last_nonce [NUM_MINERS-1:0];
+    reg [31:0] miners_current_nonce [NUM_MINERS-1:0];
     
     // Seperate logic for logging all of the results of the mining units
     generate
@@ -83,7 +64,8 @@ module multi_supervisor #(parameter NUM_MINERS=1) (
             always @(posedge clk) begin: control_loop2
                 if(start && running && miner_done[i]) begin
                     miners_last_hash[i] <= miner_hash_out[i];
-                    miners_last_nonce[i] <= {`num_miner_bits'(i), nonce[0 +: (31-`num_miner_bits)]};
+                    miners_current_nonce[i] <= {`num_miner_bits'(i), nonce[0 +: (32-`num_miner_bits)]};
+                    miners_last_nonce[i] <= miners_current_nonce[i];
                 end
             end
         end
@@ -93,7 +75,7 @@ module multi_supervisor #(parameter NUM_MINERS=1) (
     reg [`num_miner_bits : 0] current_evaluation;
     wire [31:0] zeros;
     zero_counter zc(miners_last_hash[`num_miner_bits'(current_evaluation)], zeros);
-    reg enable_cmp;
+    reg enable_cmp, cmp_valid;
     reg [31:0] last_zero_count;
     always @(posedge clk) last_zero_count <= zeros;
     
@@ -103,9 +85,11 @@ module multi_supervisor #(parameter NUM_MINERS=1) (
             nonce <= 0;
             process_complete <= 0;
             running <= 0;
-            reset_miners <= 0;
+            reset_miners <= 1;
             enable_cmp <= 0;
             current_evaluation <= `num_miner_bits'(0);
+            success <= 0;
+            start_miners <= 0;
         end
         else if(start && !running) begin // start logic (config_regs[0][1])
             running <= 1;
@@ -113,6 +97,7 @@ module multi_supervisor #(parameter NUM_MINERS=1) (
             nonce <= 0;
             start_miners <= 1;
             reset_miners <= 0;
+            success <= 0;
         end
         else if(start && running) begin
         
@@ -124,7 +109,7 @@ module multi_supervisor #(parameter NUM_MINERS=1) (
             // If the miners are done, move on to the next iteration
             // Since the miners move in lockstep, checking one for being
             // done is enough.
-            else if(miner_done[0]) begin
+            else if(miner_done[0] && !reset_miners) begin
             
                 // Start the comparison logic on the next clock cycle
                 enable_cmp <= 1;
@@ -148,14 +133,18 @@ module multi_supervisor #(parameter NUM_MINERS=1) (
                 reset_miners <= 0;
             end
         end
+        else begin
+            reset_miners <= 0;
+        end
         
         // Run comparison logic to determine whether or not we need to report a success
         if(enable_cmp && !reset && running) begin
-        
-            if(last_zero_count >= target_bits) begin
+            cmp_valid <= 1;
+            if(cmp_valid && last_zero_count >= target_bits) begin
                 process_complete <= 1;
+                success <= 1;
                 start_miners <= 0;
-                nonce_out <= {`num_miner_bits'(current_evaluation - 1), nonce[0 +: (31-`num_miner_bits)]};
+                nonce_out <= miners_last_nonce[current_evaluation - 1]; //{`num_miner_bits'(current_evaluation - 1), nonce[0 +: (32-`num_miner_bits)]};
                 hash_out <= miners_last_hash[current_evaluation - 1];
                 enable_cmp <= 0;
                 current_evaluation <= 0;
@@ -166,6 +155,8 @@ module multi_supervisor #(parameter NUM_MINERS=1) (
                     enable_cmp <= 0;
                 end
             end
+        end else begin
+            cmp_valid <= 0;
         end
     end
 endmodule

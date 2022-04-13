@@ -2,15 +2,17 @@
 
 // A sha256 core. We will assume that the message has already been padded by the time it gets here.
 module sha256
-    #(parameter CHUNKS = 1)
+    #(parameter MAX_CHUNKS = 1)
     (
     input clk,
     input reset,
     // Will run as long as this is held high
     input start,
     output reg done,
+    input [$clog2(MAX_CHUNKS):0] num_chunks,
 
-    input [CHUNKS*512 - 1:0] str,
+    // Must be aligned to the highest-order bits
+    input [MAX_CHUNKS*512 - 1:0] str,
 
     output [255:0] hash
     );
@@ -48,7 +50,7 @@ module sha256
 
     always @(*) begin
         // chunk_data = str[512*chunk_num +: 512];
-        chunk_data = str[(512*CHUNKS-1) - (512*chunk_num) -: 512];
+        chunk_data = str[(512*MAX_CHUNKS-1) - (512*chunk_num) -: 512];
     end
 
     // Our computation engine
@@ -125,7 +127,7 @@ module sha256
                 
                 // If that was the last chunk, then end the
                 // process.
-                if(chunk_num + 1'b1 == CHUNKS) begin
+                if(chunk_num + 1'b1 == num_chunks) begin
                     running <= 1'b0;
                     done <= 1'b1;
                 end

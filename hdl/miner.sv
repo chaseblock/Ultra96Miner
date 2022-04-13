@@ -8,7 +8,7 @@ module miner(
     input clk,
     input reset,
     input start,
-    output done,
+    output reg done,
 
     input [4*8 - 1: 0] version,
     input [32*8 - 1: 0] hashPrevBlock,
@@ -43,7 +43,7 @@ module miner(
     endgenerate
 
     // Now we pad the resultant message to prepare for hashing
-    wire [1023:0] msg = {
+    wire [1023:0] input_msg = {
         msg_littleend,
         // msg_bigend,
         1'b1,
@@ -55,73 +55,81 @@ module miner(
     // our problem.
     reg start1;
     wire reset1, done1;
-    wire [255:0] hash1;
+    wire [255:0] hash_result;
+    reg [1023:0] msg;
+    reg [1:0] num_chunks;
     sha256 #(2) sha1(
         clk,
         reset1,
         start1,
         done1,
+        num_chunks,
         msg,
-        hash1
-    );
-
-    reg start2;
-    wire reset2, done2;
-    wire [255:0] hash2;
-    sha256 #(1) sha2(
-        clk,
-        reset2,
-        start2,
-        done2,
-        {hash1, 1'b1, 191'b0, 64'd256},
-        hash2
+        hash_result
     );
 
     // Convert the output hash to big endian for the output
     generate
         for(i = 0; i < 32; i=i+1) begin: out_endian_loop
-            assign hash_out[i*8 +: 8] = hash2[(32*8-1) - i*8 -: 8];
+            assign hash_out[i*8 +: 8] = hash_result[(32*8-1) - i*8 -: 8];
         end
     endgenerate
 
-    reg running;
+    reg running1;
+    reg running2;
 
-    assign reset1 = reset;
-    assign reset2 = reset;
-    assign done = done1 && done2;
+    reg reset_sha;
+    assign reset1 = reset || reset_sha;
 
     always @(posedge clk) begin
-        if(reset && !start) begin
+        if(reset) begin
             // Handle reset
-            running <= 1'b0;
+            running1 <= 1'b0;
+            running2 <= 1'b0;
             start1 <= 1'b0;
-            start2 <= 1'b0;
+            done <= 1'b0;
+            reset_sha <= 1'b0;
         end
-        else if(start && ((!running && !done) || reset)) begin
+        else if(start && ((!running1 && !running2 && !done) || reset)) begin
             // Start the computation
-            running <= 1'b1;
+            running1 <= 1'b1;
+            running2 <= 1'b0;
             start1 <= 1'b1;
-            start2 <= 1'b0;
+            msg <= input_msg;
+            num_chunks <= 2;
+            reset_sha <= 1'b0;
         end
-        else if(start && running && !done) begin
+        else if(start && (running1 || running2) && !done) begin
             // Handle the continuing computation
             
-            if(!done1) begin
+            if(!done1 && running1) begin
                 // The first hasher is not yet done, so we need to
                 // let it keep running.
                 // There's not really anything to do here.
+                start1 <= 1;
             end
-            else begin
-                // The first computation is done, so we need to keep
-                // the second one running
-                start2 <= 1'b1;
+            else if(!running2) begin
+                // The first computation is done, so we need to start
+                // the second computation
+                running1 <= 0;
+                running2 <= 1;
+                start1 <= 0;
+                reset_sha <= 1;
+                num_chunks <= 1;
+                msg <= {hash_result, 1'b1, 191'b0, 64'd256, 512'bx};
+            end
+            else if(running2) begin
+                // Keep the last computation running
+                start1 <= 1;
+                reset_sha <= 0;
+                done <= done1 && !reset_sha;
             end
         end
         else if (!start) begin
             // Handle the stop condition
-            running <= 0;
+            running1 <= 0;
+            running2 <= 0;
             start1 <= 0;
-            start2 <= 0;
         end
     end
 
