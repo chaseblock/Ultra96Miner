@@ -20,6 +20,7 @@
         input  [255:0] hash_out,
         input  [31:0]  nonce_out,
         input          miner_done,
+        input          success,
 
 		// User ports ends
 		// Do not modify the ports beyond this line
@@ -380,16 +381,16 @@
 	begin
 	      if(raddr < NUM_REGS) begin
 	        case(raddr)
-	        1:  reg_data_out <= {31'b0, miner_done};
-	        32: reg_data_out <= hash_out[32*0 +: 32];
-	        33: reg_data_out <= hash_out[32*1 +: 32];
-	        34: reg_data_out <= hash_out[32*2 +: 32];
-	        35: reg_data_out <= hash_out[32*3 +: 32];
-	        36: reg_data_out <= hash_out[32*4 +: 32];
-	        37: reg_data_out <= hash_out[32*5 +: 32];
-	        38: reg_data_out <= hash_out[32*6 +: 32];
-	        39: reg_data_out <= hash_out[32*7 +: 32];
-	        40: reg_data_out <= nonce_out;
+	        1:  reg_data_out <= {30'b0, success, miner_done};
+	        40: reg_data_out <= hash_out[32*0 +: 32];
+	        41: reg_data_out <= hash_out[32*1 +: 32];
+	        42: reg_data_out <= hash_out[32*2 +: 32];
+	        43: reg_data_out <= hash_out[32*3 +: 32];
+	        44: reg_data_out <= hash_out[32*4 +: 32];
+	        45: reg_data_out <= hash_out[32*5 +: 32];
+	        46: reg_data_out <= hash_out[32*6 +: 32];
+	        47: reg_data_out <= hash_out[32*7 +: 32];
+	        48: reg_data_out <= nonce_out;
 	        default: reg_data_out <= slv_regs[raddr];
 	        endcase
 	      end

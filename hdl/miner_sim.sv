@@ -52,14 +52,14 @@ module SUPERVISOR_TEST();
     wire [31:0] nonce_out;
     
     // Module under test
-    multi_supervisor #(2) uut (
+    multi_varsupervisor #(24) uut (
         .clk(clk),
         .reset(reset),
         .start(start),
         
         .version(version), // config_regs[7]
         .hashPrevBlock(hashPrevBlock), // 256'(config_regs[15:8])
-        .hashMerkleRoot(hashMerkleRoot), // 256'(config_regs[31:16])
+        .hashMerkleRoot(hashMerkleRoot), // 256'(config_regs[23:16])
         .timestamp(timestamp), // config_regs[32]
         .bits(bits), // config_regs[33]
         .target_bits(target_bits), // config_regs[4]
@@ -79,11 +79,16 @@ module SUPERVISOR_TEST();
         @(posedge clk);
         
         // Set up the data to be hashed
+//        version = 32'h01;
+//        hashPrevBlock  = 256'h00000000000008a3a41b85b8b29ad444def299fee21793cd8b9e567eab02cd81;
+//        hashMerkleRoot = 256'h2b12fcf1b09288fcaff797d71e950e71ae42b91e8bdb2304758dfcffc2b620e3;
+//        timestamp = 32'd1305998791;
+//        bits = 32'd440711666;
         version = 32'h01;
-        hashPrevBlock  = 256'h00000000000008a3a41b85b8b29ad444def299fee21793cd8b9e567eab02cd81;
-        hashMerkleRoot = 256'h2b12fcf1b09288fcaff797d71e950e71ae42b91e8bdb2304758dfcffc2b620e3;
-        timestamp = 32'd1305998791;
-        bits = 32'd440711666;
+        hashPrevBlock  = 256'h000000009700ff3494f215c412cd8c0ceabf1deb0df03ce39bcfc223b769d3c4;
+        hashMerkleRoot = 256'h2b9905f06583c01454f10f720b5709e3b667c9dd3d9efc423c97b7e70afdc0c9;
+        timestamp = 32'd1231603171;
+        bits = 32'h1d00ffff;
         
         // De-assert the reset signal and start the miners
         reset = 0;
@@ -93,8 +98,9 @@ module SUPERVISOR_TEST();
         
         // Because we don't want to wait forever to let it find the correct answer,
         // we're going to sneak in an set its nonce value to a closer answer
-        uut.nonce <= 32'd2504433986 - 5;
-        
+//        uut.nonce <= 32'd2504433986 - 5;
+        uut.nonce <= 32'd230744328 - 5;        
+
         @(posedge clk);
         
         // Wait for the supervisor to report completion

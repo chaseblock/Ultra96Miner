@@ -50,19 +50,21 @@
 	//     Bit 1 - Start
 	// Reg 1: Status
 	//     Bit 0 - Done
+	//     Bit 1 - Success
 	// Reg 4: Target bits
-	// Reg 5: Version
-	// Reg 6-13: hashPrevBlock
-	// Reg 14-29: hashMerkleRoot
-	// Reg 30: timestamp
-	// Reg 31: bits
-	// Reg 32-39: hash_out
-	// Reg 40: nonce_out
+	// Reg 7: Version
+	// Reg 8-15: hashPrevBlock
+	// Reg 16-23: hashMerkleRoot
+	// Reg 32: timestamp
+	// Reg 33: bits
+	// Reg 40-47: hash_out
+	// Reg 48: nonce_out
 	
 	wire [31:0] config_regs [511:0];
 	
     
-    wire process_complete;;
+    wire process_complete;
+    wire success;
     wire [255:0] final_hash;
     wire [31:0]  nonce_out;
 	
@@ -75,6 +77,7 @@
 	    .hash_out(final_hash),
 	    .nonce_out(nonce_out),
 	    .miner_done(process_complete),
+	    .success(success),
 		.S_AXI_ACLK(s00_axi_aclk),
 		.S_AXI_ARESETN(s00_axi_aresetn),
 		.S_AXI_AWADDR(s00_axi_awaddr),
@@ -98,14 +101,14 @@
 		.S_AXI_RREADY(s00_axi_rready)
 	);
 
-	multi_supervisor #(16) supervisor (
+	multi_varsupervisor #(28) supervisor (
         .clk(s00_axi_aclk),
         .reset(config_regs[0][0]),
         .start(config_regs[0][1]),
         
         .version(config_regs[7]),
         .hashPrevBlock(256'(config_regs[15:8])),
-        .hashMerkleRoot(256'(config_regs[31:16])),
+        .hashMerkleRoot(256'(config_regs[23:16])),
         .timestamp(config_regs[32]),
         .bits(config_regs[33]),
         .target_bits(config_regs[4]),
@@ -113,7 +116,7 @@
         .process_complete(process_complete),
         .hash_out(final_hash),
         .nonce_out(nonce_out),
-        .success() // TODO
+        .success(success)
     );
 
 	endmodule

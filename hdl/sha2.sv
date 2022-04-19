@@ -82,15 +82,13 @@ module sha256
             done <= 1'b0;
             running <= 1'b0;
             start_chunk <= 1'b0;
-            chunk_num   <= 1'b0;
+            chunk_num <= 0;
         end
         else if (start && !running && !done) begin
             // Start the computation. We'll actually start
             // processing the sha256 hash in the next clock
             // cycle.
-            done <= 1'b0;
             running <= 1'b1;
-            chunk_num <= 1'b0;
 
             h0 <= h0_start;
             h1 <= h1_start;
